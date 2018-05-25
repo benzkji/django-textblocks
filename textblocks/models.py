@@ -14,7 +14,8 @@ from . import conf
 
 @python_2_unicode_compatible
 class TextBlock(models.Model):
-    key = models.CharField(_('key'), max_length=50, db_index=True, unique=True)
+    key = models.CharField(
+        _('key'), max_length=120, db_index=True, unique=True)
     help_text = models.CharField(_('Help Text'), max_length=255, default='')
     type = models.CharField(
         _('type'), max_length=20, choices=conf.TYPE_CHOICES)
